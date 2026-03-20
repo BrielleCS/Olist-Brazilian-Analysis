@@ -1,0 +1,2 @@
+created,approved,shipped,delivered,drop_created_to_approved,drop_approved_to_shipped,drop_shipped_to_delivered,conv_created_to_approved,conv_approved_to_shipped,conv_shipped_to_delivered
+625,484,75,6,141,409,69,77.44,15.5,8.0

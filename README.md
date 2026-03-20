@@ -12,10 +12,13 @@ Key objectives:
 - Measure revenue inequality among customers with Lorenz Curve and Gini coefficient.  
 - Examine Average Order Value (AOV) and repeat purchase behavior.
 
-The goal is to generate actionable business insights for marketing, product management, and strategic planning.
+The goal is to translate transactional data into actionable business insights that support e-commerce strategy, marketing focus, and product management decisions.
 
 ## Business Questions
 - What are the monthly revenue trends and how does monthly revenue compare between all orders and delivered orders?  
+- How efficiently do orders progress through the fulfillment funnel?  
+- Where do orders drop off within the funnel, and which stage has the lowest conversion rate?  
+- How long does it take for orders to move through each stage of the funnel?
 - Which states contribute most to total revenue?  
 - Which product categories generate the highest revenue?  
 - How concentrated is revenue among top-performing states and categories?  
@@ -26,6 +29,7 @@ The goal is to generate actionable business insights for marketing, product mana
 | Metric | Description | CSV | Plot |
 |--------|------------|-----|------|
 | Monthly Revenue | Trends in marketplace activity | [**monthly_revenue.csv**](data/monthly_revenue.csv) | ![Plot](images/monthly_revenue.png) |
+|Order Fulfillment Funnel |Stage-to-stage conversion, drop-offs, and processing times | [**funnel_stage_metrics.csv**](data/funnel_stage_metrics.csv) |![Plot](images/funnel_table.png) |
 | Revenue by State + Pareto | Geographic concentration | [**state_revenue.csv**](data/state_revenue.csv) | ![Plot](images/revenue_by_state_pareto.png) |
 | Top Product Categories | Revenue distribution across categories | [**product_revenue.csv**](data/product_revenue.csv) | ![Plot](images/top_product_categories.png) |
 | Revenue Distribution and Concentration | Lorenz Curve & Gini coefficient | [**revenue_lorenz.csv**](data/revenue_lorenz.csv) | ![Plot](images/lorenz_curve.png) |
@@ -43,24 +47,28 @@ The goal is to generate actionable business insights for marketing, product mana
 ## Analysis Workflow
 1. **Data Exploration** — Examine structure, size, and sample rows of core tables (`orders`, `order_items`, `customers`).  
 2. **Monthly Revenue Analysis** — Compare Gross Order Value (GOV) vs. Delivered Revenue.  
-3. **Revenue by State + Pareto Analysis** — Identify top-performing states and assess revenue concentration.  
-4. **Top Product Categories Analysis** — Determine which categories generate the most revenue.  
-5. **Revenue Distribution & Concentration (Lorenz Curve)** — Measure inequality among customers.  
-6. **Monthly AOV** — Track average revenue per order over time.  
-7. **Repeat Customer Analysis** — Assess repeat purchase behavior and customer retention.
+3. **Order Fulfillment Funnel Analysis** — Track order progression from creation to delivery, measure drop-offs, conversion rates, and average processing times.
+4. **Revenue by State + Pareto Analysis** — Identify top-performing states and assess revenue concentration.  
+5. **Top Product Categories Analysis** — Determine which categories generate the most revenue.  
+6. **Revenue Distribution & Concentration (Lorenz Curve)** — Measure inequality among customers.  
+7. **Monthly AOV** — Track average revenue per order over time.  
+8. **Repeat Customer Analysis** — Assess repeat purchase behavior and customer retention.
 
 ## Key Insights
 - **Monthly Revenue:** Steady growth in 2017, peak in Nov 2017 (~R$1.19M), stable near R$1M in 2018; cancellations impacted late-2018 revenue.  
+- **Order Fulfillment Funnel:** Most orders (≈97.6%) reach delivery, with the largest drop-off at the Approved → Shipped stage (~1,226 orders, 1.24%). Average time between stages increases from 0.43 days to 9.33 days from order creation to customer delivery, highlighting last-mile delivery constraints.
 - **Revenue by State:** Concentrated in SP, MG, and RJ; seven states contribute >80% of revenue.  
 - **Top Categories:** 17 of 71 categories (~24%) account for 80% of revenue; top 7 generate over 50%.  
 - **Revenue Distribution and Concentration:** Gini coefficient = 0.479; top 20% of customers contribute disproportionately.  
 - **Monthly AOV:** Peaks in October 2016 (~R$175); stable through 2018 (~R$147–R$167).  
-- **Repeat Customers:** Only 3% of customers make multiple purchases; majority are one-time buyers.  
+- **Repeat Customers:** Only 3% of customers make multiple purchases, indicating low repeat buying behavior and a heavy reliance on new customer acquisition.
 
 ## Business Recommendations
 - Focus marketing and resources on high-revenue states (`SP`, `MG`, `RJ`).  
-- Investigate late-2018 revenue drop for operational or seasonal insights.  
-- Leverage top product categories for inventory and promotions.  
+- Investigate late-2018 revenue drop to identify operational issues or seasonal effects.
+- Address the Approved → Shipped bottleneck to reduce cancellations and improve delivery efficiency. 
+- Strengthen last-mile logistics and tracking to ensure timely delivery and enhance customer satisfaction.
+- Leverage top product categories for inventory planning and promotional campaigns.  
 - Implement retention strategies and loyalty programs to increase customer lifetime value. 
 
 ## Analysis Structure
@@ -70,6 +78,7 @@ Olist-Brazilian-Analysis/
 |
 |-- data/ (CSV outputs used in analysis)
 | |-- monthly_revenue.csv
+| |-- funnel_stage_metrics.csv
 | |-- state_revenue.csv
 | |-- product_revenue.csv
 | |-- revenue_lorenz.csv
@@ -81,6 +90,7 @@ Olist-Brazilian-Analysis/
 |
 |-- images/ (Saved plots)
 | |-- monthly_revenue.png
+| |-- funnel_table.png
 | |-- revenue_by_state_pareto.png
 | |-- top_product_categories.png
 | |-- lorenz_curve.png

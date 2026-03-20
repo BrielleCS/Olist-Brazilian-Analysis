@@ -1,0 +1,2 @@
+created,approved,shipped,delivered,avg_days_created_to_approved,avg_days_approved_to_shipped,avg_days_shipped_to_delivered,drop_created_to_approved,drop_approved_to_shipped,drop_shipped_to_delivered,drop_cta_pct,drop_ats_pct,drop_std_pct,conv_created_to_approved,conv_approved_to_shipped,conv_shipped_to_delivered
+98816,98811,97585,96478,0.43,2.8,9.33,5,1226,1107,0.01,1.24,1.13,99.99,98.76,98.87
