@@ -55,7 +55,7 @@ The goal is to translate transactional data into actionable business insights th
 8. **Repeat Customer Analysis** — Assess repeat purchase behavior and customer retention.
 
 ## Key Insights
-- **Monthly Revenue:** Steady growth in 2017, peak in Nov 2017 (~R$1.19M), stable near R$1M in 2018; cancellations impacted late-2018 revenue.  
+- **Monthly Revenue:** Delivered revenue grew steadily in 2017, peaking at ~R$1.15M in November 2017, remained near R$1M through August 2018, with a sharp decline in September 2018 influenced by cancellations.
 - **Order Fulfillment Funnel:** Most orders (≈97.63%) reach delivery, with the largest drop-off at the Approved → Shipped stage (~1,226 orders, 1.24%). Average time between stages increases from 0.43 days to 9.33 days from order creation to customer delivery, highlighting last-mile delivery constraints.
 - **Revenue by State:** Concentrated in SP, MG, and RJ; seven states contribute more than 80% of revenue.  
 - **Top Product Categories:** 17 of 71 categories (~24%) account for 80% of revenue; top seven categories generate over 50% of revenue.  
